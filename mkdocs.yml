@@ -1,0 +1,8 @@
+site_name: torch-endid
+site_url: https://xiangao.github.io/torch-endid/
+repo_url: https://github.com/xiangao/torch-endid
+
+nav:
+  - Home: index.md
+  - Examples: examples.md
+

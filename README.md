@@ -1,5 +1,7 @@
 # torch-endid
 
+[![docs](https://img.shields.io/badge/docs-site-blue.svg)](https://xiangao.github.io/torch-endid/)
+
 GPU-accelerated distributional difference-in-differences via engression.
 
 Combines [lwdid](https://github.com/xwshen51/lwdid) panel transformations (Lee & Wooldridge, 2025) with [torch-engression](../torch-engression/) GPU-accelerated distributional regression to produce ATT, quantile treatment effects (QTE), and counterfactual distributions from panel data.
@@ -100,6 +102,15 @@ result = endid(..., device="cpu")
 # Control bootstrap batching
 result = endid(..., batch_bootstrap=True, max_concurrent=4)
 ```
+
+## Documentation & examples
+
+Full documentation: **<https://xiangao.github.io/torch-endid/>**
+
+| Page | Description |
+|------|-------------|
+| [Benchmark notebook](https://github.com/xiangao/torch-endid/blob/main/nb/benchmark.ipynb) | End-to-end runtime benchmark |
+| [Examples page](https://xiangao.github.io/torch-endid/examples/) | Notebook and generated benchmark figure links |
 
 ## How It Works
 
