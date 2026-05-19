@@ -109,7 +109,7 @@ Full documentation: **<https://xiangao.github.io/torch-endid/>**
 
 | Page | Description |
 |------|-------------|
-| [Benchmark notebook](https://github.com/xiangao/torch-endid/blob/main/nb/benchmark.ipynb) | End-to-end runtime benchmark |
+| [Benchmark notebook](https://github.com/xiangao/torch-endid/blob/master/nb/benchmark.ipynb) | End-to-end runtime benchmark |
 | [Examples page](https://xiangao.github.io/torch-endid/examples/) | Notebook and generated benchmark figure links |
 
 ## How It Works
