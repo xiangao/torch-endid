@@ -2,9 +2,11 @@
 
 [![docs](https://img.shields.io/badge/docs-site-blue.svg)](https://xiangao.github.io/torch-endid/)
 
-GPU-accelerated distributional difference-in-differences via engression.
-
-Combines [lwdid](https://github.com/xwshen51/lwdid) panel transformations (Lee & Wooldridge, 2025) with [torch-engression](../torch-engression/) GPU-accelerated distributional regression to produce ATT, quantile treatment effects (QTE), and counterfactual distributions from panel data.
+`torch-endid` combines the panel transformations from
+[lwdid](https://github.com/xwshen51/lwdid) with
+[torch-engression](../torch-engression/) distributional regression. It reports
+the ATT, quantile treatment effects, and simulated counterfactual distributions
+from panel data.
 
 ## Installation
 
@@ -89,7 +91,9 @@ Auto-detects GPU. GPU speedup scales with cross-section size:
 
 (nboot=5-10, num_epochs=200, GTX 1080 Ti)
 
-GPU overhead dominates for small cross-sections (<1K units) typical of DiD. For large panels (5K+ units), GPU becomes beneficial. CPU is recommended for most empirical applications.
+For small cross sections, which are common in DiD, GPU overhead can dominate.
+For larger panels the GPU can help. I would usually start on CPU and switch
+only if the panel is large enough.
 
 ```python
 # Auto-detect GPU (default)
