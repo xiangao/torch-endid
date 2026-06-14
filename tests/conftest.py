@@ -4,6 +4,11 @@ import numpy as np
 import pandas as pd
 import pytest
 import torch
+from torch_engression.utils import cuda_is_usable
+
+
+if torch.cuda.is_available() and not cuda_is_usable():
+    torch.cuda.is_available = lambda: False
 
 
 @pytest.fixture

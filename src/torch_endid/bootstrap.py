@@ -8,6 +8,7 @@ from tqdm.auto import tqdm
 
 from torch_engression import Engressor
 from torch_engression.loss import energy_loss_two_sample
+from torch_engression.utils import cuda_is_usable
 from .fitting import fit_engression_cs, _compute_effects
 
 
@@ -64,7 +65,7 @@ def bootstrap_endid(
     n = len(Y)
     nq = len(quantiles)
 
-    if batch_bootstrap and device != "cpu" and torch.cuda.is_available():
+    if batch_bootstrap and device != "cpu" and cuda_is_usable():
         att_boot, qte_boot_mat = _batched_bootstrap(
             Y, D, controls, nboot, quantiles, nsample,
             noise_dim, hidden_dim, num_layer, num_epochs, lr,

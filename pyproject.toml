@@ -25,6 +25,9 @@ dev = [
     "pytest-xdist",
 ]
 
+[tool.uv.sources]
+torch-engression = { path = "../torch-engression", editable = true }
+
 [tool.hatch.build.targets.wheel]
 packages = ["src/torch_endid"]
 
