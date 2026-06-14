@@ -80,7 +80,11 @@ for name, cr in result.cohort_results.items():
 
 ## GPU Acceleration
 
-Auto-detects GPU. GPU speedup scales with cross-section size:
+Auto-detects GPU (via torch-engression's `cuda_is_usable()` probe), so a CUDA
+device that is visible but cannot run kernels — e.g. an unsupported compute
+capability raising `cudaErrorNoKernelImageForDevice` — falls back to CPU with a
+warning instead of crashing the batched bootstrap. GPU speedup scales with
+cross-section size:
 
 | N units | CPU (s) | GPU (s) | Speedup |
 |---------|---------|---------|---------|

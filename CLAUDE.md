@@ -26,7 +26,7 @@ torch-endid/
 
 - **Depends on torch-engression**: Uses `torch_engression.engression()` for GPU-accelerated neural network training
 - **Depends on lwdid**: Uses `lwdid.transformations.apply_rolling_transform()` for panel preprocessing
-- **Batched GPU bootstrap**: Trains multiple bootstrap models concurrently on GPU (max_concurrent=4)
+- **Batched GPU bootstrap**: Trains multiple bootstrap models concurrently on GPU (max_concurrent=4). Gated on `torch_engression.utils.cuda_is_usable()` (not bare `torch.cuda.is_available()`), so a visible-but-unusable CUDA device falls back to the CPU path instead of crashing.
 - **Per-unit ATT**: Evaluates E[Y|D=1,X_i] - E[Y|D=0,X_i] per treated unit, then averages (Jensen's inequality)
 - **No D*X interactions**: Engression learns nonlinear relationships directly
 - **Parameter names match R endid**: rolling, control_group, aggregate, gvar, post, etc.
